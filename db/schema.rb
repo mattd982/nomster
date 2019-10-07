@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_020408) do
     t.datetime "updated_at", null: false
     t.text "caption"
     t.integer "place_id"
+    t.integer "user_id"
     t.string "picture"
   end
 
