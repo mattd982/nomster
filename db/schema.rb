@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_020408) do
     t.string "picture"
   end
 
-  create_table "places", force: :cascade do |t|
+  create_table "places", id: :serial, force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "address"
