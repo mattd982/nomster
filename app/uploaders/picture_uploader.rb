@@ -1,2 +1,3 @@
-# storage :file
-storage :fog
+class PictureUploader < CarrierWave::Uploader::Base
+  storage :file
+end
