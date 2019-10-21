@@ -104,6 +104,8 @@
  <% @place.comments.each do |comment| %>
   <div class="col-12 col-sm-6">
     <blockquote>
+      
+      
       <% if comment.humanized_rating.present? %>
         <b><%= comment.humanized_rating %></b> -
       <% end %>
@@ -116,6 +118,15 @@
 
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
   <%= f.input :caption %>
-  
+  <%= f.input :picture %>
   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
- <% end %>
+<% end %>
+
+<div class="row">
+<% @place.photos.each do |photo| %>
+<% if photo.picture_url %>
+   <%= image_tag photo.picture_url %>\
+   <% end %>
+   <%= photo.caption %>
+  <%end %>
+</div>
